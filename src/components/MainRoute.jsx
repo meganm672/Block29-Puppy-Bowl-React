@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom"
 import AllPlayers from "./AllPlayers";
 import SinglePlayer from "./SinglePlayer";
 
-const Routes = () => {
+const MainRoute = () => {
     return(
         <div>
             <Routes>
@@ -17,3 +17,5 @@ const Routes = () => {
         </div>
     )
 }
+
+export default MainRoute

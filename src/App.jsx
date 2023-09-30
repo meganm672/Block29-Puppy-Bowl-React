@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 import './App.css'
 
+import Navbar from './components/NavBar'
+import MainRoute from './components/MainRoute'
 
 
 function App() {
@@ -9,7 +11,8 @@ function App() {
 
   return (
     <>
-     
+      <Navbar />
+      <MainRoute />
     </>
   )
 }

@@ -1,8 +1,15 @@
 import React from "react";
 
+//import Link from react-router-dom
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    return(<h1>The Navbar component</h1>)
+    return(
+        <div>
+            <Link to="/">Home</Link>
+            <Link to="/players/:id">Single Player</Link>
+        </div>
+    )
 }
 
 export default Navbar
