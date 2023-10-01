@@ -2,11 +2,15 @@ import React from "react";
 
 //import useState and useEffect hook
 import { useState, useEffect} from "react"
+import { useNavigate } from "react-router-dom";
+
+
 
 const AllPlayers = () => {
     const [players, setPlayers] = useState([]);
     const [error, setError] =useState(null);
     
+    const navigate = useNavigate();
     useEffect(() =>{
         async function fetchPlayers(){
             try{
@@ -34,6 +38,7 @@ const AllPlayers = () => {
                     <p><img src={player.imageUrl}></img></p>
                     <p>{player.breed}</p>
                     <p>{player.status}</p>
+                    <button onClick={()=> navigate("/players/:id")} >Player Info</button>
                 </div>
             )
         })) : !error && <p>Loading ...</p>
