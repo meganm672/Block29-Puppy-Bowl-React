@@ -4,7 +4,7 @@ import './App.css'
 
 import Navbar from './components/NavBar'
 import MainRoute from './components/MainRoute'
-
+import NewPlayerForm from './components/NewPlayerForm'
 
 function App() {
 
@@ -13,6 +13,7 @@ function App() {
     <>
       <Navbar />
       <MainRoute />
+      <NewPlayerForm />
     </>
   )
 }

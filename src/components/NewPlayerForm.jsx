@@ -10,6 +10,7 @@ const NewPlayerForm = () => {
     const [status, setStatus]=useState("");
     const [error, setError]= useState("")
 
+
     function resetForm(){
         setId("");
         setPlayerName("");
@@ -49,47 +50,59 @@ const NewPlayerForm = () => {
             <h2>Add New Player</h2>
             {error && <p>{error}</p>}
             <lable>
-                Id:{" "}
+                Id:{"  "}
                 <input
                     value={id}
+                    onChange={(e) =>setId(e.target.value)}
                 />
             </lable>
 
+            <br />
             <br />
 
             <lable>
                 Name:{" "}
                 <input
                     value={playerName}
+                    onChange={(e) =>setPlayerName(e.target.value)}
                 />
             </lable>
 
+            <br />
             <br />
 
             <lable>
                 Breed:{" "}
                 <input
                     value={breed}
+                    onChange={(e) =>setBreed(e.target.value)}
                 />
             </lable>
 
+            <br />
             <br />
 
             <lable>
                 Image:{" "}
                 <input
                     value={imageUrl}
+                    onChange={(e) =>setImageUrl(e.target.value)}
                 />
             </lable>
 
+            <br />
             <br />
 
             <lable>
                 Status:{" "}
                 <input
                     value={status}
+                    onChange={(e) =>setStatus(e.target.value)}
                 />
             </lable>
+
+            <br />
+            <br />
 
             <button type="reset" onClick={resetForm}>Reset</button>
             <button disabled={error} type="submit">Submit</button>
