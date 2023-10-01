@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 
 
 const SinglePlayer = () => {
-    const [player, setPlayer] =useState([]);
+    const [singlePlayer, setSinglePlayer] =useState([]);
     const [error, setError] =useState(null);
 
     const params= useParams();
@@ -18,17 +18,17 @@ const SinglePlayer = () => {
     useEffect(()=>{
         async function fetchSinglePlayer(){
             try{
-                const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players/${player}`)
+                const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players/${playerId}`)
                 const data = await response.json();
-                console.log(data)
-                
+                console.log(data);
+                setSinglePlayer(data);
             }catch(e){
-
                 console.error(e)
+                setError(e)
             }
         }
         fetchSinglePlayer();
-    }, [])
+    }, []) 
     return(<h1>hi</h1>)
 }
 
