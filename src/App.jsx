@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       <Navbar />
-      <MainRoute />
       <NewPlayerForm />
+      <MainRoute />
     </>
   )
 }
