@@ -9,7 +9,7 @@ export default function Searchbar (){
             try{
                 const response = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players");
                 const data = await response.json();
-                console.log(data.data.players);
+                console.log("from the search",data.data.players);
                 setFilterData(data.data.players);
             }catch(e){
                 console.error(e)
@@ -26,11 +26,11 @@ export default function Searchbar (){
         }
     }
     return(
-        <div>
-            <div>
+        <div className="searchTop">
+            <div className="search">
                 <input type="text" placeholder="Search Here..." onChange={e => handleFilter(e.target.value)}/>
             </div>
-            <div>
+            <div className="searchResult">
                 {data.map((data) => (
                     <div key={data.name}> 
                         {data.name}
