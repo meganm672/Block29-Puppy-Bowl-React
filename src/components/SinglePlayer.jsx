@@ -16,14 +16,14 @@ const SinglePlayer = () => {
     const params= useParams();
 
     const playerId = params.id
-    console.log(playerId)
+    console.log("player id", playerId)
 
     useEffect(()=>{
         async function fetchSinglePlayer(){
             try{
                 const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players/${playerId}`)
                 const data = await response.json();
-                console.log(data.data.player);
+                console.log("from single fetch",data.data.player);
                 setSinglePlayer(data.data.player);
             }catch(e){
                 console.error(e)
@@ -33,13 +33,19 @@ const SinglePlayer = () => {
         fetchSinglePlayer();
     }, []) 
     return(
-        <div>
-            <h3>{singlePlayer.name}</h3>
-            <p><img src={singlePlayer.imageUrl}></img></p>
-            <p><b>Breed:</b> {singlePlayer.breed}</p>
-            <p><b>Status:</b> {singlePlayer.status}</p>
+        <div className="singlePlayerContainer">
+            <div className="singlePlayerCard">
+                <div className="playerImageContainer">
+                    <img src={singlePlayer.imageUrl} alt={singlePlayer.name} className="playerImage"></img>
+                </div>
+                <div className="playerDetails">
+                    <h3>{singlePlayer.name}</h3>
+                    <p><b>Breed:</b> {singlePlayer.breed}</p>
+                    <p><b>Status:</b> {singlePlayer.status}</p>
 
-            <button onClick={() => {handleRemove()}}> Delete Player</button>
+                    <button onClick={() => {handleRemove()}}> Delete Player</button>
+                </div>
+            </div>
         </div>
         )
 }

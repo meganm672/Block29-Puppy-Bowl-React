@@ -47,67 +47,69 @@ const NewPlayerForm = () => {
         }
     }
     return(
-        <form method="post" onSubmit={handleSubmit}>
-            <h2>Add New Player</h2>
-            {error && <p>{error}</p>}
-            <label>
-                Id:{"  "}
-                <input
-                    value={id}
-                    onChange={(e) =>setId(e.target.value)}
-                />
-            </label>
+        <div className="formContainer">
+                <h2>Add New Player</h2>
+                {error && <p>{error}</p>}
+            <form className= "form" method="post" onSubmit={handleSubmit}>
+                <label>
+                    Id:{"  "}
+                    <input
+                        value={id}
+                        onChange={(e) =>setId(e.target.value)}
+                    />
+                </label>
 
-            <br />
-            <br />
+                <br />
+                <br />
 
-            <label>
-                Name:{" "}
-                <input
-                    value={playerName}
-                    onChange={(e) =>setPlayerName(e.target.value)}
-                />
-            </label>
+                <label>
+                    Name:{" "}
+                    <input
+                        value={playerName}
+                        onChange={(e) =>setPlayerName(e.target.value)}
+                    />
+                </label>
 
-            <br />
-            <br />
+                <br />
+                <br />
 
-            <label>
-                Breed:{" "}
-                <input
-                    value={breed}
-                    onChange={(e) =>setBreed(e.target.value)}
-                />
-            </label>
+                <label>
+                    Breed:{" "}
+                    <input
+                        value={breed}
+                        onChange={(e) =>setBreed(e.target.value)}
+                    />
+                </label>
 
-            <br />
-            <br />
+                <br />
+                <br />
 
-            <label>
-                Image:{" "}
-                <input
-                    value={imageUrl}
-                    onChange={(e) =>setImageUrl(e.target.value)}
-                />
-            </label>
+                <label>
+                    Image:{" "}
+                    <input
+                        value={imageUrl}
+                        onChange={(e) =>setImageUrl(e.target.value)}
+                    />
+                </label>
 
-            <br />
-            <br />
+                <br />
+                <br />
 
-            <label>
-                Status:{" "}
-                <input
-                    value={status}
-                    onChange={(e) =>setStatus(e.target.value)}
-                />
-            </label>
+                <label>
+                    Status:{" "}
+                    <input
+                        value={status}
+                        onChange={(e) =>setStatus(e.target.value)}
+                    />
+                </label>
 
-            <br />
-            <br />
+                <br />
+                <br />
 
-            <button type="reset" onClick={resetForm}>Reset</button>
-            <button disabled={error} type="submit">Submit</button>
-        </form>
+                <button type="reset" onClick={resetForm}>Reset</button>
+                <button disabled={error} type="submit">Submit</button>
+            </form>
+        </div>
         )
 }
 

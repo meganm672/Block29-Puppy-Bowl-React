@@ -10,11 +10,11 @@ function App() {
 
 
   return (
-    <>
+    <div className='app'>
       <Navbar />
       <NewPlayerForm />
       <MainRoute />
-    </>
+    </div>
   )
 }
 

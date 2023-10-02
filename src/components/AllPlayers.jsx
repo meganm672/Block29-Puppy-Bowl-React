@@ -34,18 +34,22 @@ const AllPlayers = () => {
     },[]);
 
     return(
-       <div>
+       <div className="playerContainer">
         {error && !players && (<p> Failed to load players from roster</p>)}
        { players 
        ?(
         players.map((player)=>{
             return(
-                <div key={player.name}>
-                    <h4>{player.name}</h4>
-                    <p><img src={player.imageUrl}></img></p>
-                    <p>{player.breed}</p>
-                    <p>{player.status}</p>
-                    <button onClick={()=> navigate("/players/" + player.id)} >Player Info</button>
+                <div key={player.name} className="playerCard">
+                    <div className="playerImageContainer">
+                        <img src={player.imageUrl} alt={player.name} className="playerImage"></img>
+                    </div>
+                    <div className="playerDetails">
+                        <h3>{player.name}</h3>
+                        <p><b> Breed: </b>{player.breed}</p>
+                        <p> <b>Status: </b>{player.status}</p>
+                        <button onClick={()=> navigate("/players/" + player.id)} >Player Info</button>
+                    </div>
                 </div>
             )
         })) : !error && <p>Loading ...</p>
