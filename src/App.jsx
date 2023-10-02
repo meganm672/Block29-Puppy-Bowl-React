@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <div className='app'>
+    <div>
       <Navbar />
       <NewPlayerForm />
       <MainRoute />
