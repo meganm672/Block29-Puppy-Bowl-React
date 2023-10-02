@@ -12,18 +12,24 @@ const AllPlayers = () => {
     const [error, setError] =useState(null);
     
     const navigate = useNavigate();
+
     useEffect(() =>{
         async function fetchPlayers(){
             try{
                 const response = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players");
                 const data = await response.json();
                 console.log(data.data.players);
-                setPlayers(data.data.players);
+                setPlayers(data.data.players)
             }catch(e){
                 console.error(e)
                 setError(e);
             };
         };
+
+        // if(response instanceof Error){
+        //     setError(response);
+        // }
+        // setPlayers(data.data.players);
         fetchPlayers();
     },[]);
 
