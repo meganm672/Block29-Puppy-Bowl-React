@@ -49,57 +49,57 @@ const NewPlayerForm = () => {
         <form method="post" onSubmit={handleSubmit}>
             <h2>Add New Player</h2>
             {error && <p>{error}</p>}
-            <lable>
+            <label>
                 Id:{"  "}
                 <input
                     value={id}
                     onChange={(e) =>setId(e.target.value)}
                 />
-            </lable>
+            </label>
 
             <br />
             <br />
 
-            <lable>
+            <label>
                 Name:{" "}
                 <input
                     value={playerName}
                     onChange={(e) =>setPlayerName(e.target.value)}
                 />
-            </lable>
+            </label>
 
             <br />
             <br />
 
-            <lable>
+            <label>
                 Breed:{" "}
                 <input
                     value={breed}
                     onChange={(e) =>setBreed(e.target.value)}
                 />
-            </lable>
+            </label>
 
             <br />
             <br />
 
-            <lable>
+            <label>
                 Image:{" "}
                 <input
                     value={imageUrl}
                     onChange={(e) =>setImageUrl(e.target.value)}
                 />
-            </lable>
+            </label>
 
             <br />
             <br />
 
-            <lable>
+            <label>
                 Status:{" "}
                 <input
                     value={status}
                     onChange={(e) =>setStatus(e.target.value)}
                 />
-            </lable>
+            </label>
 
             <br />
             <br />

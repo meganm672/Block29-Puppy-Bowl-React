@@ -7,7 +7,6 @@ const Navbar = () => {
     return(
         <div>
             <Link to="/">Home</Link>
-            <Link to="/players/:id">Single Player</Link>
         </div>
     )
 }
