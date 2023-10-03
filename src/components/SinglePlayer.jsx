@@ -31,6 +31,7 @@ const SinglePlayer = () => {
     }, []) 
     return(
         <div className="singlePlayerContainer">
+            {error && !singlePlayer && (<p>Failed to load single player card.</p>)}
             <div className="singlePlayerCard">
                 <div className="playerImageContainer">
                     <img src={singlePlayer.imageUrl} alt={singlePlayer.name} className="playerImage"></img>
