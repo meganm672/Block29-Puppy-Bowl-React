@@ -42,23 +42,22 @@ export const handleRemove = async (id) =>{
     }
 }
 
-
-
-// export async function postNewPlayer({id,name :playerName,breed,imageUrl,status}){
-//         try{
-//             //send data to the server with fetch
-//             const response = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players",
-//             {
-//                 method: "POST",
-//                 headers: {
-//                     "Content-Type": "application/json"
-//                 },
-//                 body: JSON.stringify({id,name:playerName,breed,imageUrl,status}),
-//             });
-//             const result= await response.json();
-//             console.log( "from the player form",result.data);
-//             return result.data
-//         }catch(e){
-//             console.error(e);
-//         }
-//     }
+// post a new player to the api
+export async function postNewPlayer({id,name :playerName,breed,imageUrl,status}){
+        try{
+            //send data to the server with fetch
+            const response = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({id,name:playerName,breed,imageUrl,status}),
+            });
+            const result= await response.json();
+            console.log( "from the player form",result.data);
+            return result.data
+        }catch(e){
+            console.error(e);
+        }
+    }

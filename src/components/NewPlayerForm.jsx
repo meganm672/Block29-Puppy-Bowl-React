@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useState } from "react";
-// import { postNewPlayer } from "../API";
+import { postNewPlayer } from "../API";
 
 const NewPlayerForm = () => {
     const [id, setId]= useState("");
@@ -28,28 +28,10 @@ const NewPlayerForm = () => {
         //read data directly from state
         console.log({id,name :playerName,breed,imageUrl,status});
 
-        // if(!error){
-        //     const postPlayer= await postNewPlayer({id,name :playerName,breed,imageUrl,status})
-        // }
-
         if(!error){
-            try{
-                //send data to the server with fetch
-                const response = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({id,name:playerName,breed,imageUrl,status}),
-                });
-                const result= await response.json();
-                console.log(result.data);
-            }catch(e){
-                console.error(e);
-                setError(e.message);
-            }
+            const postPlayer= await postNewPlayer({id,name :playerName,breed,imageUrl,status})
         }
+
     }
     return(
         <div className="formContainer">
