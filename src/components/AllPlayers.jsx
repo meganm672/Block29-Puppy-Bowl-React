@@ -39,7 +39,7 @@ const AllPlayers = () => {
         <div>
             <div className="searchTop">
                 <h2>Search Players</h2>
-                <input type="text" className="search" onChange={Filter} placeholder="Search Player Here..."/>
+                <input name="search" type="text" className="search" onChange={Filter} placeholder="Search Player Here..."/>
             </div>
        <div className="playerContainer">
         {error && !players && (<p> Failed to load players from roster</p>)}

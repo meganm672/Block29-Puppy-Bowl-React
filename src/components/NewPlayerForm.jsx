@@ -41,6 +41,7 @@ const NewPlayerForm = () => {
                 <label>
                     Id:{"  "}
                     <input
+                        name="playerId"
                         value={id}
                         onChange={(e) =>setId(e.target.value)}
                     />
@@ -52,6 +53,7 @@ const NewPlayerForm = () => {
                 <label>
                     Name:{" "}
                     <input
+                        name="playerName"
                         value={playerName}
                         onChange={(e) =>setPlayerName(e.target.value)}
                     />
@@ -63,6 +65,7 @@ const NewPlayerForm = () => {
                 <label>
                     Breed:{" "}
                     <input
+                        name="breed"
                         value={breed}
                         onChange={(e) =>setBreed(e.target.value)}
                     />
@@ -74,6 +77,7 @@ const NewPlayerForm = () => {
                 <label>
                     Image:{" "}
                     <input
+                        name="playerImage"
                         value={imageUrl}
                         onChange={(e) =>setImageUrl(e.target.value)}
                     />
@@ -85,6 +89,7 @@ const NewPlayerForm = () => {
                 <label>
                     Status:{" "}
                     <input
+                        name="status"
                         value={status}
                         onChange={(e) =>setStatus(e.target.value)}
                     />
