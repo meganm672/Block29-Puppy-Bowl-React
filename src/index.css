@@ -13,41 +13,21 @@
   color:blueviolet;
   padding: 10px;
 }
+
 .searchTop{
-  /* width: 100%; */
-  margin-left: 450px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  color: #008000;
+  background-color: aliceblue;
+  border-radius: 2em;
+  margin: 10px;
 }
+
 
 .search{
-  width: 100%;
-  font-size: 20px;
-  font-weight: bold;
-  flex-direction: row;
-}
-
-.search input{
-  flex-direction: row;
-  width: 100%;
-  padding: 15px 30px;
+  width: 40%;
   font-size: 18px;
-  margin-top: 10px;
-}
-
-.searchResult{
-  width: 100%;
-  background-color: azure;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.searchResult div{
-  width: 100%;
-  padding: 10px 30px;
-  background-color: azure;
+  margin: 5px;
 }
 
 .formContainer{
