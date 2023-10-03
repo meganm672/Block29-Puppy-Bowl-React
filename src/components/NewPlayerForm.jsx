@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useState } from "react";
+// import { postNewPlayer } from "../API";
 
 const NewPlayerForm = () => {
     const [id, setId]= useState("");
@@ -26,6 +27,10 @@ const NewPlayerForm = () => {
 
         //read data directly from state
         console.log({id,name :playerName,breed,imageUrl,status});
+
+        // if(!error){
+        //     const postPlayer= await postNewPlayer({id,name :playerName,breed,imageUrl,status})
+        // }
 
         if(!error){
             try{
