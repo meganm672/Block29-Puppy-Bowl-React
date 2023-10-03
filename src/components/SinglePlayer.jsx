@@ -19,14 +19,15 @@ const SinglePlayer = () => {
     console.log("player id", playerId)
 
     useEffect(()=>{
-        async function fetchSinglePlayerData(){
+        async function fetchSinglePlayerData(playerId){
            const singlePlayerData = await fetchSinglePlayer(playerId);
            if( singlePlayerData instanceof Error){
                 setError(singlePlayerData)
            }
+           console.log("from the fetch single data" ,singlePlayerData)
            setSinglePlayer(singlePlayerData);
         }
-        fetchSinglePlayerData();
+        fetchSinglePlayerData(playerId);
     }, []) 
     return(
         <div className="singlePlayerContainer">
