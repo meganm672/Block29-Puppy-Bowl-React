@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
 
+import { searchApiCall } from "../API";
+
 export default function Searchbar (){
     const [data,setData] = useState([]);
     const [filterData,setFilterData]= useState([]);
 
     useEffect(()=>{
         async function searchApi(){
-            try{
-                const response = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players");
-                const data = await response.json();
-                console.log("from the search",data.data.players);
-                setFilterData(data.data.players);
-            }catch(e){
-                console.error(e)
-            }
+            const searchResult = await searchApiCall();
+            console.log("from search api", searchResult)
+            setFilterData(searchResult);
         }
         searchApi();
     },[])
@@ -22,7 +19,7 @@ export default function Searchbar (){
         const result = filterData.filter(f => f.name.toLowerCase().includes(value))
         setData(result);
         if(value === ""){
-            // setData([]);
+            setData([]);
         }
     }
     return(
