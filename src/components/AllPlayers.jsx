@@ -9,11 +9,12 @@ import { useNavigate } from "react-router-dom";
 //import fetchplayer from api
 import { fetchPlayers } from '../API/index'
 
-//import searchBar component
-import Searchbar from "./Searchbar";
+// //import searchBar component
+// import Searchbar from "./Searchbar";
 
 const AllPlayers = () => {
     const [players, setPlayers] = useState([]);
+    const [filterPlayers, setFilterPlayers] = useState([])
     const [error, setError] = useState(null);
     
     const navigate = useNavigate();
@@ -25,18 +26,25 @@ const AllPlayers = () => {
             setError(playerData);
          }
          setPlayers(playerData);
+         setFilterPlayers(playerData)
         }
         fetchPlayerData();
     },[]);
 
+    const Filter = (event) => {
+        setFilterPlayers(players.filter(f => f.name.toLowerCase().includes(event.target.value)))
+    }
+
     return(
         <div>
-        <Searchbar />
+            <div className="searchTop">
+                <input type="text" className="search" onChange={Filter} placeholder="Search Here..."/>
+            </div>
        <div className="playerContainer">
         {error && !players && (<p> Failed to load players from roster</p>)}
        { players 
        ?(
-        players.map((player)=>{
+        filterPlayers.map((player)=>{
             return(
                 <div key={player.name} className="playerCard">
                     <div className="playerImageContainer">
