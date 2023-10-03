@@ -7,7 +7,7 @@ import { useState, useEffect} from "react"
 import { useParams } from "react-router-dom";
 
 // import { fetchSinglePlayer } from '../API/index'
-import { handleRemove } from "../API/index";
+import { handleRemove , fetchSinglePlayer } from "../API/index";
 
 const SinglePlayer = () => {
     const [singlePlayer, setSinglePlayer] = useState({});
@@ -19,18 +19,14 @@ const SinglePlayer = () => {
     console.log("player id", playerId)
 
     useEffect(()=>{
-        async function fetchSinglePlayer(){
-            try{
-                const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players/${playerId}`)
-                const data = await response.json();
-                console.log("from single fetch",data.data.player);
-                setSinglePlayer(data.data.player);
-            }catch(e){
-                console.error(e)
-                setError(e)
-            }
+        async function fetchSinglePlayerData(){
+           const singlePlayerData = await fetchSinglePlayer(playerId);
+           if( singlePlayerData instanceof Error){
+                setError(singlePlayerData)
+           }
+           setSinglePlayer(singlePlayerData);
         }
-        fetchSinglePlayer();
+        fetchSinglePlayerData();
     }, []) 
     return(
         <div className="singlePlayerContainer">
@@ -43,7 +39,7 @@ const SinglePlayer = () => {
                     <p><b>Breed:</b> {singlePlayer.breed}</p>
                     <p><b>Status:</b> {singlePlayer.status}</p>
 
-                    <button onClick={() => {handleRemove()}}> Delete Player</button>
+                    <button onClick={() => {handleRemove(singlePlayer.id)}}> Delete Player</button>
                 </div>
             </div>
         </div>

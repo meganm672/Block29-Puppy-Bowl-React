@@ -25,7 +25,7 @@ const NewPlayerForm = () => {
         e.preventDefault();
 
         //read data directly from state
-        console.log({id,playerName,breed,imageUrl,status});
+        console.log({id,name :playerName,breed,imageUrl,status});
 
         if(!error){
             try{
@@ -36,7 +36,7 @@ const NewPlayerForm = () => {
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({id,playerName,breed,imageUrl,status}),
+                    body: JSON.stringify({id,name:playerName,breed,imageUrl,status}),
                 });
                 const result= await response.json();
                 console.log(result.data);

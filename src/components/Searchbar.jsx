@@ -22,7 +22,7 @@ export default function Searchbar (){
         const result = filterData.filter(f => f.name.toLowerCase().includes(value))
         setData(result);
         if(value === ""){
-            setData([]);
+            // setData([]);
         }
     }
     return(
