@@ -2,10 +2,15 @@ import React from "react";
 
 //import useState and useEffect hook
 import { useState, useEffect} from "react"
+
 //import useNavigate hook
 import { useNavigate } from "react-router-dom";
 
+//import fetchplayer from api
 import { fetchPlayers } from '../API/index'
+
+//import searchBar component
+import Searchbar from "./Searchbar";
 
 const AllPlayers = () => {
     const [players, setPlayers] = useState([]);
@@ -25,6 +30,8 @@ const AllPlayers = () => {
     },[]);
 
     return(
+        <div>
+        <Searchbar />
        <div className="playerContainer">
         {error && !players && (<p> Failed to load players from roster</p>)}
        { players 
@@ -46,6 +53,7 @@ const AllPlayers = () => {
         })) : !error && <p>Loading ...</p>
        }
        </div>
+        </div>
 
     )
         
