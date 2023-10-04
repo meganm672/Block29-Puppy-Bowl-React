@@ -2,7 +2,8 @@
 .navbar{
   align-items: center;
   background-color: #fff0f5;
-  border-radius: 1em;
+  border-radius: .8em;
+  color: #008000;
   display: flex;
   font-size: 20px;
   justify-content: space-evenly;
@@ -13,7 +14,6 @@
   color:blueviolet;
   padding: 10px;
 }
-
 
 .formContainer{
   background-color: aliceblue;
@@ -28,13 +28,17 @@
   font-size: 18px;
   justify-content: space-evenly;
 }
+
+.form input{
+  width: 50%;
+}
 .form button{
   background-color: #e6e6fa;
   border-radius: 1em;
   color: #4b0082;
-  font-size: 16px;
+  font-size: 14px;
   margin: 10px;
-  padding: 10px;
+  padding: 8px;
 }
 
 .searchTop{

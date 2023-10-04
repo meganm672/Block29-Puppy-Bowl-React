@@ -1,6 +1,3 @@
-import React from "react";
-
-
 
 //fetch the players from the api
   export async function fetchPlayers(){

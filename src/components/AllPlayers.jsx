@@ -9,9 +9,6 @@ import { useNavigate } from "react-router-dom";
 //import fetchplayer from api
 import { fetchPlayers } from '../API/index'
 
-// //import searchBar component
-// import Searchbar from "./Searchbar";
-
 const AllPlayers = () => {
     const [players, setPlayers] = useState([]);
     const [filterPlayers, setFilterPlayers] = useState([])
@@ -31,6 +28,7 @@ const AllPlayers = () => {
         fetchPlayerData();
     },[]);
 
+    //filter the search results as the person types in the search bar
     const Filter = (event) => {
         setFilterPlayers(players.filter(f => f.name.toLowerCase().includes(event.target.value)))
     }
@@ -68,4 +66,4 @@ const AllPlayers = () => {
         
 }
 
-export default AllPlayers
+export default AllPlayers;

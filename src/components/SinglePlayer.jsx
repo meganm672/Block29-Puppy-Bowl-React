@@ -6,7 +6,7 @@ import { useState, useEffect} from "react"
 //import useParams from react-router-dom
 import { useParams } from "react-router-dom";
 
-// import { fetchSinglePlayer } from '../API/index'
+// import { handleRemove, fetchSinglePlayer } from '../API/index'
 import { handleRemove , fetchSinglePlayer } from "../API/index";
 
 const SinglePlayer = () => {
@@ -15,8 +15,8 @@ const SinglePlayer = () => {
 
     const params= useParams();
 
-    const playerId = params.id
-    console.log("player id", playerId)
+    const playerId = params.id;
+    console.log("player id", playerId);
 
     useEffect(()=>{
         async function fetchSinglePlayerData(playerId){
@@ -28,7 +28,8 @@ const SinglePlayer = () => {
            setSinglePlayer(singlePlayerData);
         }
         fetchSinglePlayerData(playerId);
-    }, []) 
+    }, []);
+
     return(
         <div className="singlePlayerContainer">
             {error && !singlePlayer && (<p>Failed to load single player card.</p>)}
@@ -48,4 +49,4 @@ const SinglePlayer = () => {
         )
 }
 
-export default SinglePlayer
+export default SinglePlayer;

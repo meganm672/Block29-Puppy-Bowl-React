@@ -1,6 +1,9 @@
 import React from "react";
 
+//import useState from react
 import { useState } from "react";
+
+//import poseNewPlayer from api
 import { postNewPlayer } from "../API";
 
 const NewPlayerForm = () => {
@@ -31,8 +34,8 @@ const NewPlayerForm = () => {
         if(!error){
             const postPlayer= await postNewPlayer({id,name :playerName,breed,imageUrl,status})
         }
-
     }
+
     return(
         <div className="formContainer">
                 <h2>Add New Player</h2>
@@ -47,9 +50,6 @@ const NewPlayerForm = () => {
                     />
                 </label>
 
-                <br />
-                <br />
-
                 <label>
                     Name:{" "}
                     <input
@@ -58,9 +58,6 @@ const NewPlayerForm = () => {
                         onChange={(e) =>setPlayerName(e.target.value)}
                     />
                 </label>
-
-                <br />
-                <br />
 
                 <label>
                     Breed:{" "}
@@ -71,9 +68,6 @@ const NewPlayerForm = () => {
                     />
                 </label>
 
-                <br />
-                <br />
-
                 <label>
                     Image:{" "}
                     <input
@@ -82,9 +76,6 @@ const NewPlayerForm = () => {
                         onChange={(e) =>setImageUrl(e.target.value)}
                     />
                 </label>
-
-                <br />
-                <br />
 
                 <label>
                     Status:{" "}
@@ -95,9 +86,6 @@ const NewPlayerForm = () => {
                     />
                 </label>
 
-                <br />
-                <br />
-
                 <button type="reset" onClick={resetForm}>Reset</button>
                 <button disabled={error} type="submit">Submit</button>
             </form>
@@ -105,4 +93,4 @@ const NewPlayerForm = () => {
         )
 }
 
-export default NewPlayerForm
+export default NewPlayerForm;
