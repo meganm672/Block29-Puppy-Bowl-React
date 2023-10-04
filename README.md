@@ -10,3 +10,5 @@ Somewhere in the application, there is a form to create a new player and it gets
 
 ## Deployed App
 
+https://651cb6a545250a58c77d5dbf--visionary-pudding-dbbe46.netlify.app/
+
